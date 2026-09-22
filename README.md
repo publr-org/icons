@@ -2,16 +2,19 @@
 
 # Publr Icons
 
-**The icon set behind Publr. SVG is the source; the TypeScript and Zig adapters are generated and committed.**
+**The icon set behind Publr. SVG is the source**
+
+![Publr Icons](docs/icons.png)
 
 </div>
 
 ---
 
-Shared UI icons for Publr products, 156 of them at 24×24. The repository is
-framework- and package-manager-neutral: the SVG files are the source of truth,
-a Zig generator validates them and writes every adapter, and nothing here
-needs node or npm.
+Set of 156 shared UI icons for publr products. Size 24x24. Framework, language and package manager agnostic. It's just SVGs.
+
+This project ships with Zig adapter.
+
+Every icon can be easily used both client and server side.
 
 Social and brand icons do not belong here. They will have their own package.
 
@@ -27,19 +30,27 @@ Social and brand icons do not belong here. They will have their own package.
 
 ## Browser and editor
 
-```ts
-import { iconSvg, iconRef, mountIconSprite } from "@publr/icons";
+Every icon in a page is a `<use>` pointing into one hidden sprite. The sprite
+is a fact about the page, not something a consumer arranges: a server writes
+it with the icons it rendered, and the browser adds whatever it renders on top.
 
-button.innerHTML = iconSvg("plus", "size-5");
-mountIconSprite();
+```ts
+import { icon } from "@publr/icons";
+
+button.innerHTML = icon("plus", "size-5");
 ```
+
+That returns `<svg class="size-5"><use href="#publr-icon-plus"/></svg>` and, if
+the page's sprite does not hold `plus` yet, adds it, creating the sprite on
+first use. `iconSvg("plus")` inlines the artwork instead, for markup that
+leaves the page, and `sprite(names)` returns the sprite as a string for a page
+assembled outside the browser.
 
 The package has no runtime dependencies. Sibling repos import `../icons/src/index.ts` by path.
 
 ## Zig and CMS (no npm)
 
-Sibling repos reference the committed Zig adapter by path and register it as a
-build module:
+Sibling repos reference the committed Zig adapter by path and register it as a build module:
 
 ```zig
 const publr_icons = b.createModule(.{
