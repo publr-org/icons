@@ -1,0 +1,22 @@
+.{
+    .name = .publr_icons,
+    .version = "0.1.0",
+    .fingerprint = 0x3a736d560703c784,
+    .minimum_zig_version = "0.16.0",
+    .dependencies = .{
+        // Build-time only: the gallery's local server. Consumers of the icons never see it.
+        .publr_http = .{ .path = "../lib/http" },
+    },
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "scripts",
+        "icons",
+        "src",
+        "publr_icons.zig",
+        "manifest.json",
+        "index.html",
+        "figma-plugin",
+        "README.md",
+    },
+}

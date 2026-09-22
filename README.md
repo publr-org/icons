@@ -1,8 +1,17 @@
+<div align="center">
+
 # Publr Icons
 
-Shared UI icons for Publr products. This repository is deliberately
-framework- and package-manager-neutral: SVG files are the source of truth and
-the TypeScript and Zig adapters are committed generated artifacts.
+**The icon set behind Publr. SVG is the source; the TypeScript and Zig adapters are generated and committed.**
+
+</div>
+
+---
+
+Shared UI icons for Publr products, 156 of them at 24×24. The repository is
+framework- and package-manager-neutral: the SVG files are the source of truth,
+a Zig generator validates them and writes every adapter, and nothing here
+needs node or npm.
 
 Social and brand icons do not belong here. They will have their own package.
 
@@ -14,7 +23,7 @@ Social and brand icons do not belong here. They will have their own package.
 - `manifest.json` — stable machine-readable icon inventory.
 - `index.html` — generated, self-contained all-icons gallery.
 - `figma-plugin/` — local Figma plugin that creates editable components.
-- `scripts/build.mjs` — validates SVGs and regenerates every adapter.
+- `scripts/build.zig` — validates SVGs and regenerates every adapter (`zig build gen`).
 
 ## Browser and editor
 
@@ -25,32 +34,31 @@ button.innerHTML = iconSvg("plus", "size-5");
 mountIconSprite();
 ```
 
-The package has no runtime dependencies. Consumers may install it from the
-Git repository or vendor it directly.
+The package has no runtime dependencies. Sibling repos import `../icons/src/index.ts` by path.
 
 ## Zig and CMS (no npm)
 
-Vendor or pin this repository in the source tree and register the committed
-Zig adapter as a build module:
+Sibling repos reference the committed Zig adapter by path and register it as a
+build module:
 
 ```zig
 const publr_icons = b.createModule(.{
-    .root_source_file = b.path("vendor/publr-icons/publr_icons.zig"),
+    .root_source_file = b.path("../icons/publr_icons.zig"),
 });
 ```
 
-The CMS receives the same adapter through its vendored `publr_ui.zig` build
-artifact, so CMS builds never run npm and never fetch icons at runtime.
+Nothing runs npm and nothing fetches icons at runtime.
 
 ## Development
 
 ```sh
-npm run build
-npm test
+zig build gen    # validate icons/*.svg and regenerate every artifact
+zig build test   # generator tests, plus proof the committed artifacts are current
+zig build serve  # the gallery at http://127.0.0.1:8092 (zig build serve -- --port 9000)
 ```
 
-Both commands use Node's standard library only. Generated files must be
-committed with SVG changes.
+Zig only; the generator has no dependencies. Generated files must be committed
+with SVG changes, and `zig build test` fails until they are.
 
 Open `index.html` directly to browse every icon, search by name, switch theme,
 and click an icon to copy its canonical name.
@@ -68,3 +76,18 @@ The plugin creates one editable 24×24 component per manifest icon, names them
 as `Icon/<name>`, arranges them in a preview grid, and adds SVG export settings.
 It performs no network requests. Running it in a non-empty file creates a new
 page instead of deleting or replacing existing work.
+
+## Part of Publr
+
+| Repository | What it is |
+|---|---|
+| [publr](https://github.com/publr-org/publr) | the CMS, one binary |
+| [ui](https://github.com/publr-org/ui) | the design system, one PTSX source for both targets |
+| [pjsx](https://github.com/publr-org/pjsx) | the PTSX compiler: DOM and Zig targets |
+| [publrjs](https://github.com/publr-org/publrjs) | the browser runtime behind the `data-p-*` wire |
+| [jit](https://github.com/publr-org/jit) | classes to CSS, at build time or in the browser |
+| [lib](https://github.com/publr-org/lib) | the Zig libraries: sqlite, http, auth, deps |
+
+## License
+
+[Apache 2.0](LICENSE)

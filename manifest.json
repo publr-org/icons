@@ -15,6 +15,26 @@
       "file": "alert-triangle.svg"
     },
     {
+      "name": "align-baseline",
+      "file": "align-baseline.svg"
+    },
+    {
+      "name": "align-center",
+      "file": "align-center.svg"
+    },
+    {
+      "name": "align-end",
+      "file": "align-end.svg"
+    },
+    {
+      "name": "align-start",
+      "file": "align-start.svg"
+    },
+    {
+      "name": "align-stretch",
+      "file": "align-stretch.svg"
+    },
+    {
       "name": "arrow-left",
       "file": "arrow-left.svg"
     },
@@ -23,12 +43,52 @@
       "file": "audio.svg"
     },
     {
+      "name": "bleed-both",
+      "file": "bleed-both.svg"
+    },
+    {
+      "name": "bleed-left",
+      "file": "bleed-left.svg"
+    },
+    {
+      "name": "bleed-none",
+      "file": "bleed-none.svg"
+    },
+    {
+      "name": "bleed-right",
+      "file": "bleed-right.svg"
+    },
+    {
       "name": "bold",
       "file": "bold.svg"
     },
     {
       "name": "bookmark",
       "file": "bookmark.svg"
+    },
+    {
+      "name": "border-radius-bottom-left",
+      "file": "border-radius-bottom-left.svg"
+    },
+    {
+      "name": "border-radius-bottom-right",
+      "file": "border-radius-bottom-right.svg"
+    },
+    {
+      "name": "border-radius-corner",
+      "file": "border-radius-corner.svg"
+    },
+    {
+      "name": "border-radius-none",
+      "file": "border-radius-none.svg"
+    },
+    {
+      "name": "border-radius-top-left",
+      "file": "border-radius-top-left.svg"
+    },
+    {
+      "name": "border-radius-top-right",
+      "file": "border-radius-top-right.svg"
     },
     {
       "name": "button",
@@ -103,6 +163,14 @@
       "file": "components.svg"
     },
     {
+      "name": "container-sizes",
+      "file": "container-sizes.svg"
+    },
+    {
+      "name": "container-width",
+      "file": "container-width.svg"
+    },
+    {
       "name": "copy",
       "file": "copy.svg"
     },
@@ -117,6 +185,18 @@
     {
       "name": "details",
       "file": "details.svg"
+    },
+    {
+      "name": "device-desktop",
+      "file": "device-desktop.svg"
+    },
+    {
+      "name": "device-mobile",
+      "file": "device-mobile.svg"
+    },
+    {
+      "name": "device-tablet",
+      "file": "device-tablet.svg"
     },
     {
       "name": "dot-filled",
@@ -139,6 +219,10 @@
       "file": "edit.svg"
     },
     {
+      "name": "element-typography",
+      "file": "element-typography.svg"
+    },
+    {
       "name": "external",
       "file": "external.svg"
     },
@@ -147,12 +231,20 @@
       "file": "file.svg"
     },
     {
+      "name": "filter-lines",
+      "file": "filter-lines.svg"
+    },
+    {
       "name": "folder-plus",
       "file": "folder-plus.svg"
     },
     {
       "name": "folder",
       "file": "folder.svg"
+    },
+    {
+      "name": "fonts-icons",
+      "file": "fonts-icons.svg"
     },
     {
       "name": "gallery",
@@ -165,6 +257,10 @@
     {
       "name": "grid",
       "file": "grid.svg"
+    },
+    {
+      "name": "grip-vertical",
+      "file": "grip-vertical.svg"
     },
     {
       "name": "group-blocks",
@@ -219,8 +315,40 @@
       "file": "image.svg"
     },
     {
+      "name": "info-circle",
+      "file": "info-circle.svg"
+    },
+    {
       "name": "italic",
       "file": "italic.svg"
+    },
+    {
+      "name": "justify-around",
+      "file": "justify-around.svg"
+    },
+    {
+      "name": "justify-between",
+      "file": "justify-between.svg"
+    },
+    {
+      "name": "justify-center",
+      "file": "justify-center.svg"
+    },
+    {
+      "name": "justify-end",
+      "file": "justify-end.svg"
+    },
+    {
+      "name": "justify-evenly",
+      "file": "justify-evenly.svg"
+    },
+    {
+      "name": "justify-start",
+      "file": "justify-start.svg"
+    },
+    {
+      "name": "layout",
+      "file": "layout.svg"
     },
     {
       "name": "link",
@@ -245,6 +373,10 @@
     {
       "name": "list",
       "file": "list.svg"
+    },
+    {
+      "name": "loader",
+      "file": "loader.svg"
     },
     {
       "name": "lock",
@@ -279,8 +411,16 @@
       "file": "package.svg"
     },
     {
+      "name": "palette",
+      "file": "palette.svg"
+    },
+    {
       "name": "paragraph",
       "file": "paragraph.svg"
+    },
+    {
+      "name": "pattern-library",
+      "file": "pattern-library.svg"
     },
     {
       "name": "pattern",
@@ -297,6 +437,10 @@
     {
       "name": "preformatted",
       "file": "preformatted.svg"
+    },
+    {
+      "name": "primitive-blocks",
+      "file": "primitive-blocks.svg"
     },
     {
       "name": "pullquote",
@@ -319,12 +463,20 @@
       "file": "reset.svg"
     },
     {
+      "name": "responsive",
+      "file": "responsive.svg"
+    },
+    {
       "name": "row",
       "file": "row.svg"
     },
     {
       "name": "search",
       "file": "search.svg"
+    },
+    {
+      "name": "semantic-colors",
+      "file": "semantic-colors.svg"
     },
     {
       "name": "separator",
@@ -343,8 +495,40 @@
       "file": "share.svg"
     },
     {
+      "name": "sidebar-right",
+      "file": "sidebar-right.svg"
+    },
+    {
       "name": "spacer",
       "file": "spacer.svg"
+    },
+    {
+      "name": "spacing-sides-bottom",
+      "file": "spacing-sides-bottom.svg"
+    },
+    {
+      "name": "spacing-sides-left",
+      "file": "spacing-sides-left.svg"
+    },
+    {
+      "name": "spacing-sides-none",
+      "file": "spacing-sides-none.svg"
+    },
+    {
+      "name": "spacing-sides-right",
+      "file": "spacing-sides-right.svg"
+    },
+    {
+      "name": "spacing-sides-top",
+      "file": "spacing-sides-top.svg"
+    },
+    {
+      "name": "spacing-sync-left-right",
+      "file": "spacing-sync-left-right.svg"
+    },
+    {
+      "name": "spacing-sync-top-bottom",
+      "file": "spacing-sync-top-bottom.svg"
     },
     {
       "name": "stack",
@@ -369,6 +553,22 @@
     {
       "name": "tag",
       "file": "tag.svg"
+    },
+    {
+      "name": "text-align-center",
+      "file": "text-align-center.svg"
+    },
+    {
+      "name": "text-align-left",
+      "file": "text-align-left.svg"
+    },
+    {
+      "name": "text-align-right",
+      "file": "text-align-right.svg"
+    },
+    {
+      "name": "token-library",
+      "file": "token-library.svg"
     },
     {
       "name": "trash",
@@ -401,6 +601,26 @@
     {
       "name": "video",
       "file": "video.svg"
+    },
+    {
+      "name": "viewport-compare",
+      "file": "viewport-compare.svg"
+    },
+    {
+      "name": "viewport-fit",
+      "file": "viewport-fit.svg"
+    },
+    {
+      "name": "wrap-none",
+      "file": "wrap-none.svg"
+    },
+    {
+      "name": "wrap-reverse",
+      "file": "wrap-reverse.svg"
+    },
+    {
+      "name": "wrap",
+      "file": "wrap.svg"
     },
     {
       "name": "x-close",

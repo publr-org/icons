@@ -1,27 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
-import { fileURLToPath } from "node:url";
-
-const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
-const manifest = JSON.parse(await readFile(resolve(root, "manifest.json"), "utf8"));
-
-const cards = await Promise.all(
-  manifest.icons.map(async ({ name, file }) => {
-    const svg = await readFile(resolve(root, "icons", file), "utf8");
-    const inner = svg.match(/<svg\b[^>]*>([\s\S]*?)<\/svg>/i)?.[1]?.trim();
-    if (!inner) throw new Error(`${file}: expected one non-empty <svg> root`);
-    return `
-      <button class="icon-card" type="button" data-name="${name}" aria-label="Copy ${name}">
-        <span class="icon-preview" aria-hidden="true">
-          <svg viewBox="${manifest.viewBox}" fill="none">${inner}</svg>
-        </span>
-        <span class="icon-name">${name}</span>
-        <span class="copy-state" aria-hidden="true">Copy</span>
-      </button>`;
-  }),
-);
-
-const html = `<!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -191,7 +168,7 @@ const html = `<!doctype html>
       <div class="header-inner">
         <div class="brand">
           <h1>Publr Icons</h1>
-          <div class="count"><span id="visible-count">${manifest.icons.length}</span> of ${manifest.icons.length} UI icons</div>
+          <div class="count"><span id="visible-count">{{COUNT}}</span> of {{COUNT}} UI icons</div>
         </div>
         <label class="search-wrap">
           <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m16 16 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -203,7 +180,7 @@ const html = `<!doctype html>
       </div>
     </header>
     <main>
-      <div class="icon-grid" id="icon-grid">${cards.join("")}
+      <div class="icon-grid" id="icon-grid">{{CARDS}}
       </div>
       <div class="empty" id="empty">No icons match your search.</div>
     </main>
@@ -255,7 +232,3 @@ const html = `<!doctype html>
     </script>
   </body>
 </html>
-`;
-
-await writeFile(resolve(root, "index.html"), html);
-console.log(`Generated one-page gallery for ${manifest.icons.length} UI icons.`);
