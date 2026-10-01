@@ -91,6 +91,10 @@
       "file": "border-radius-top-right.svg"
     },
     {
+      "name": "branch",
+      "file": "branch.svg"
+    },
+    {
       "name": "button",
       "file": "button.svg"
     },
@@ -221,6 +225,14 @@
     {
       "name": "element-typography",
       "file": "element-typography.svg"
+    },
+    {
+      "name": "environment-root",
+      "file": "environment-root.svg"
+    },
+    {
+      "name": "environment",
+      "file": "environment.svg"
     },
     {
       "name": "external",
@@ -465,6 +477,10 @@
     {
       "name": "responsive",
       "file": "responsive.svg"
+    },
+    {
+      "name": "rocket",
+      "file": "rocket.svg"
     },
     {
       "name": "row",

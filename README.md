@@ -10,7 +10,7 @@
 
 ---
 
-Set of 156 shared UI icons for publr products. Size 24x24. Framework, language and package manager agnostic. It's just SVGs.
+Set of 160 shared UI icons for publr products. Size 24x24. Framework, language and package manager agnostic. It's just SVGs.
 
 This project ships with Zig adapter.
 
