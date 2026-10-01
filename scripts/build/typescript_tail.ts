@@ -22,7 +22,7 @@ export function ensureIcon(name: IconName, doc: Document = document): void {
     sprite = doc.createElementNS(SVG_NS, "svg");
     sprite.id = SPRITE_ID;
     sprite.setAttribute("aria-hidden", "true");
-    sprite.setAttribute("style", "display:none");
+    sprite.setAttribute("style", "position:absolute;width:0;height:0;overflow:hidden");
     doc.body.appendChild(sprite);
   }
   const symbol = doc.createElementNS(SVG_NS, "symbol");
@@ -42,6 +42,6 @@ export const icon = (name: string, className = "size-6", doc: Document = documen
 
 /** The sprite as markup, for a page assembled outside the browser. */
 export const sprite = (names: readonly IconName[] = Object.keys(ICONS) as IconName[]): string =>
-  `<svg id="${SPRITE_ID}" style="display:none" aria-hidden="true">${names
+  `<svg id="${SPRITE_ID}" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">${names
     .map((name) => `<symbol id="publr-icon-${name}" viewBox="${ICON_VIEWBOX}" fill="none">${ICONS[name]}</symbol>`)
     .join("")}</svg>`;

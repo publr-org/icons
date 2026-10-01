@@ -29,7 +29,7 @@ pub fn writeSymbol(writer: anytype, name: Name) !void {
 
 /// The hidden sprite holding the given icons, the way a server writes it into a page.
 pub fn writeSprite(writer: anytype, names: []const Name) !void {
-    try writer.writeAll("<svg id=\"publr-icon-sprite\" style=\"display:none\" aria-hidden=\"true\">");
+    try writer.writeAll("<svg id=\"publr-icon-sprite\" style=\"position:absolute;width:0;height:0;overflow:hidden\" aria-hidden=\"true\">");
     for (names) |name| try writeSymbol(writer, name);
     try writer.writeAll("</svg>");
 }
