@@ -39,6 +39,14 @@
       "file": "arrow-left.svg"
     },
     {
+      "name": "arrow-up-right",
+      "file": "arrow-up-right.svg"
+    },
+    {
+      "name": "arrow-up",
+      "file": "arrow-up.svg"
+    },
+    {
       "name": "audio",
       "file": "audio.svg"
     },
@@ -183,6 +191,10 @@
       "file": "cover.svg"
     },
     {
+      "name": "cursor-click",
+      "file": "cursor-click.svg"
+    },
+    {
       "name": "decorative",
       "file": "decorative.svg"
     },
@@ -237,6 +249,10 @@
     {
       "name": "external",
       "file": "external.svg"
+    },
+    {
+      "name": "eye",
+      "file": "eye.svg"
     },
     {
       "name": "file",
@@ -359,6 +375,14 @@
       "file": "justify-start.svg"
     },
     {
+      "name": "layout-grid",
+      "file": "layout-grid.svg"
+    },
+    {
+      "name": "layout-rows",
+      "file": "layout-rows.svg"
+    },
+    {
       "name": "layout",
       "file": "layout.svg"
     },
@@ -411,6 +435,10 @@
       "file": "menu-03.svg"
     },
     {
+      "name": "moodboard",
+      "file": "moodboard.svg"
+    },
+    {
       "name": "moon",
       "file": "moon.svg"
     },
@@ -437,6 +465,14 @@
     {
       "name": "pattern",
       "file": "pattern.svg"
+    },
+    {
+      "name": "pill",
+      "file": "pill.svg"
+    },
+    {
+      "name": "pin",
+      "file": "pin.svg"
     },
     {
       "name": "plus-circle",
@@ -485,6 +521,10 @@
     {
       "name": "row",
       "file": "row.svg"
+    },
+    {
+      "name": "scale-bars",
+      "file": "scale-bars.svg"
     },
     {
       "name": "search",
@@ -547,12 +587,24 @@
       "file": "spacing-sync-top-bottom.svg"
     },
     {
+      "name": "sparkles",
+      "file": "sparkles.svg"
+    },
+    {
       "name": "stack",
       "file": "stack.svg"
     },
     {
+      "name": "star",
+      "file": "star.svg"
+    },
+    {
       "name": "sun",
       "file": "sun.svg"
+    },
+    {
+      "name": "swatch-grid",
+      "file": "swatch-grid.svg"
     },
     {
       "name": "symbol",
