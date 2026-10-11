@@ -39,7 +39,12 @@ pub fn plugin(allocator: std.mem.Allocator, icons: []const svg.Icon) ![]const u8
 
 test "the plugin embeds every icon's full source as JSON" {
     const icons = [_]svg.Icon{
-        .{ .name = "a", .file = "a.svg", .source = "<svg>\n</svg>\n", .body = "" },
+        .{
+            .name = "a",
+            .file = "a.svg",
+            .source = "<svg>\n</svg>\n",
+            .body = "",
+        },
     };
     const out = try plugin(std.testing.allocator, &icons);
     defer std.testing.allocator.free(out);

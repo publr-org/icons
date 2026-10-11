@@ -8,7 +8,11 @@ pub fn main(init: std.process.Init) u8 {
     return http.cli.serve(App, init, .{
         .setup = &setup,
         // The page is 110 KB; the library's default response cap is 32 KB.
-        .defaults = .{ .port = 8092, .connections_max = 16, .response_bytes_max = 1 << 20 },
+        .defaults = .{
+            .port = 8092,
+            .connections_max = 16,
+            .response_bytes_max = 1 << 20,
+        },
     });
 }
 

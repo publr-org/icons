@@ -148,8 +148,18 @@ fn write_multiline(writer: *std.Io.Writer, body: []const u8) !void {
 
 test "manifest lists every icon in order" {
     const icons = [_]svg.Icon{
-        .{ .name = "a-b", .file = "a-b.svg", .source = "", .body = "<g/>" },
-        .{ .name = "c", .file = "c.svg", .source = "", .body = "<g/>" },
+        .{
+            .name = "a-b",
+            .file = "a-b.svg",
+            .source = "",
+            .body = "<g/>",
+        },
+        .{
+            .name = "c",
+            .file = "c.svg",
+            .source = "",
+            .body = "<g/>",
+        },
     };
     const out = try manifest(std.testing.allocator, &icons);
     defer std.testing.allocator.free(out);
@@ -163,7 +173,12 @@ test "manifest lists every icon in order" {
 
 test "the zig adapter turns dashes into underscores and lines into a multiline literal" {
     const icons = [_]svg.Icon{
-        .{ .name = "a-b", .file = "a-b.svg", .source = "", .body = "<g>\n  <path/>\n</g>" },
+        .{
+            .name = "a-b",
+            .file = "a-b.svg",
+            .source = "",
+            .body = "<g>\n  <path/>\n</g>",
+        },
     };
     const out = try zig_adapter(std.testing.allocator, &icons);
     defer std.testing.allocator.free(out);

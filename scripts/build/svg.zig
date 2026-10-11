@@ -64,7 +64,12 @@ pub fn read(allocator: std.mem.Allocator, file: []const u8, source: []const u8) 
 
     const body = try normalise_newlines(allocator, inner);
 
-    return .{ .name = name, .file = file, .source = source, .body = body };
+    return .{
+        .name = name,
+        .file = file,
+        .source = source,
+        .body = body,
+    };
 }
 
 fn is_kebab_case(name: []const u8) bool {
@@ -94,7 +99,10 @@ fn is_kebab_case(name: []const u8) bool {
     return !previous_dash;
 }
 
-const Root = struct { attributes: []const u8, inner: []const u8 };
+const Root = struct {
+    attributes: []const u8,
+    inner: []const u8,
+};
 
 /// The first `<svg ...>` element and what it wraps, matched case-insensitively.
 fn find_root(source: []const u8) ?Root {
@@ -110,7 +118,10 @@ fn find_root(source: []const u8) ?Root {
 
     std.debug.assert(end_at >= close_at + 1);
 
-    return .{ .attributes = source[after_tag..close_at], .inner = source[close_at + 1 .. end_at] };
+    return .{
+        .attributes = source[after_tag..close_at],
+        .inner = source[close_at + 1 .. end_at],
+    };
 }
 
 fn has_view_box(attributes: []const u8, expected: []const u8) bool {
@@ -141,7 +152,9 @@ fn has_hardcoded_black(body: []const u8) bool {
     return false;
 }
 
-const ColorAttribute = struct { value_at: usize };
+const ColorAttribute = struct {
+    value_at: usize,
+};
 
 fn next_color_attribute(body: []const u8, from: usize) ?ColorAttribute {
     var best: ?usize = null;
@@ -168,7 +181,9 @@ fn next_color_attribute(body: []const u8, from: usize) ?ColorAttribute {
 
     const value_at = best orelse return null;
 
-    return .{ .value_at = value_at };
+    return .{
+        .value_at = value_at,
+    };
 }
 
 fn quoted_value(text: []const u8) ?[]const u8 {

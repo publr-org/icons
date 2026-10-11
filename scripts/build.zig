@@ -20,14 +20,32 @@ pub const Outputs = struct {
     figma: []const u8,
 };
 
-pub const Artifact = struct { path: []const u8, field: []const u8 };
+pub const Artifact = struct {
+    path: []const u8,
+    field: []const u8,
+};
 
 pub const artifacts = [_]Artifact{
-    .{ .path = "src/index.ts", .field = "typescript" },
-    .{ .path = "publr_icons.zig", .field = "zig_adapter" },
-    .{ .path = "manifest.json", .field = "manifest" },
-    .{ .path = "index.html", .field = "gallery" },
-    .{ .path = "figma-plugin/code.js", .field = "figma" },
+    .{
+        .path = "src/index.ts",
+        .field = "typescript",
+    },
+    .{
+        .path = "publr_icons.zig",
+        .field = "zig_adapter",
+    },
+    .{
+        .path = "manifest.json",
+        .field = "manifest",
+    },
+    .{
+        .path = "index.html",
+        .field = "gallery",
+    },
+    .{
+        .path = "figma-plugin/code.js",
+        .field = "figma",
+    },
 };
 
 pub fn main(init: std.process.Init) !void {
@@ -49,7 +67,9 @@ pub fn main(init: std.process.Init) !void {
 
 /// Every `icons/*.svg`, validated, in byte order of the filename.
 pub fn load_icons(allocator: std.mem.Allocator, io: std.Io) ![]const svg.Icon {
-    var dir = try std.Io.Dir.cwd().openDir(io, icons_dir, .{ .iterate = true });
+    var dir = try std.Io.Dir.cwd().openDir(io, icons_dir, .{
+        .iterate = true,
+    });
     defer dir.close(io);
 
     var files: std.ArrayList([]const u8) = .empty;

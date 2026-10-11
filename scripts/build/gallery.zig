@@ -38,8 +38,18 @@ pub fn page(allocator: std.mem.Allocator, icons: []const svg.Icon) ![]const u8 {
 
 test "the page carries one card per icon and the count twice" {
     const icons = [_]svg.Icon{
-        .{ .name = "a", .file = "a.svg", .source = "", .body = "<g/>" },
-        .{ .name = "b", .file = "b.svg", .source = "", .body = "<g/>" },
+        .{
+            .name = "a",
+            .file = "a.svg",
+            .source = "",
+            .body = "<g/>",
+        },
+        .{
+            .name = "b",
+            .file = "b.svg",
+            .source = "",
+            .body = "<g/>",
+        },
     };
     const out = try page(std.testing.allocator, &icons);
     defer std.testing.allocator.free(out);
