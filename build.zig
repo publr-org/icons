@@ -4,6 +4,11 @@ pub fn build(b: *std.Build) void {
     const target = b.standardTargetOptions(.{});
     const optimize = b.standardOptimizeOption(.{});
 
+    // The icons as SVG markup, for Zig programs that draw them (native apps).
+    _ = b.addModule("publr_icons", .{
+        .root_source_file = b.path("publr_icons.zig"),
+    });
+
     const generator = b.addExecutable(.{
         .name = "icons-build",
         .root_module = b.createModule(.{
