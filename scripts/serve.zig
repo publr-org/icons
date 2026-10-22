@@ -5,8 +5,7 @@ const http = @import("publr_http");
 const App = http.Server(.{});
 
 pub fn main(init: std.process.Init) u8 {
-    return http.cli.serve(App, init, .{
-        .setup = &setup,
+    return http.cli.serve(App, init, &setup, .{
         // The page is 110 KB; the library's default response cap is 32 KB.
         .defaults = .{
             .port = 8092,
