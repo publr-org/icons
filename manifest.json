@@ -35,8 +35,16 @@
       "file": "align-stretch.svg"
     },
     {
+      "name": "arrow-down",
+      "file": "arrow-down.svg"
+    },
+    {
       "name": "arrow-left",
       "file": "arrow-left.svg"
+    },
+    {
+      "name": "arrow-right",
+      "file": "arrow-right.svg"
     },
     {
       "name": "arrow-up-right",
@@ -249,6 +257,10 @@
     {
       "name": "external",
       "file": "external.svg"
+    },
+    {
+      "name": "eye-off",
+      "file": "eye-off.svg"
     },
     {
       "name": "eye",
@@ -553,6 +565,10 @@
     {
       "name": "sidebar-right",
       "file": "sidebar-right.svg"
+    },
+    {
+      "name": "sliders",
+      "file": "sliders.svg"
     },
     {
       "name": "spacer",
