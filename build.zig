@@ -26,7 +26,7 @@ pub fn build(b: *std.Build) void {
 
     const publr_http = b.dependency("publr_http", .{
         .target = target,
-        .release = optimize != .Debug,
+        .release = optimize != .debug,
     });
     const server = b.addExecutable(.{
         .name = "icons-serve",
@@ -44,7 +44,7 @@ pub fn build(b: *std.Build) void {
 
     const serve = b.addRunArtifact(server);
     serve.setCwd(b.path("."));
-    if (b.args) |args| serve.addArgs(args);
+    serve.addPassthruArgs();
     b.step("serve", "Serve the gallery at http://127.0.0.1:8092 (flags after --, e.g. --port 9000)").dependOn(&serve.step);
 
     const unit = b.addTest(.{
@@ -65,7 +65,7 @@ pub fn build(b: *std.Build) void {
         .root_module = b.createModule(.{
             .root_source_file = b.path("../publr/scripts/tidy.zig"),
             .target = b.graph.host,
-            .optimize = .Debug,
+            .optimize = .debug,
         }),
     });
     const run_tidy = b.addRunArtifact(tidy);

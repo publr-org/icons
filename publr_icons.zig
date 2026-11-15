@@ -845,12 +845,12 @@ pub const x_close: []const u8 =
 
 pub fn get(name: Name) []const u8 {
     const values = comptime blk: {
-        const fields = @typeInfo(Name).@"enum".fields;
-        var result: [fields.len][]const u8 = undefined;
-        for (fields, 0..) |field, index| result[index] = @field(@This(), field.name);
+        const names = @typeInfo(Name).@"enum".field_names;
+        var result: [names.len][]const u8 = undefined;
+        for (names, 0..) |field_name, index| result[index] = @field(@This(), field_name);
         break :blk result;
     };
-    return values[@intFromEnum(name)];
+    return values[@backingInt(name)];
 }
 
 /// The icon's name as the sprite id spells it: `calendar_check` → `calendar-check`.
